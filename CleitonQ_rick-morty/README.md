@@ -65,7 +65,7 @@ Ao clicar em um personagem, o app exibe:
 ## ✨ Funcionalidades Adicionais
 
 - **🔄 Detalhes Dinâmicos:** Carregamento assíncrono via `FutureBuilder`
-- **Status do personagem:** A cor varia se o personagem for: Vivo, morte ou desconhecido
+- **✅ Status do personagem:** A cor altera se o personagem for: Vivo, Morto ou Desconhecido
 
 ---
 
@@ -82,37 +82,39 @@ Ao clicar em um personagem, o app exibe:
 ```bash
 lib/
 ├── components/                     # Widgets reutilizáveis
-│   ├── app_bar_widget.dart         # AppBar customizado com troca de tema
-│   ├── character_card_widget.dart  # Card de personagem
-│   └── ...                       
+│   ├── app_bar_widget.dart         # AppBar superior nas telas
+│   ├── character_card_widget.dart  # Card do personagem
+│   └── ...                        
 │
-├── data/                         
+├── data/                          
 │   ├── repository.dart             # Funções para buscar dados da API
-│   └── ...                       
+│   └── ...                        
 │
-├── models/                       
+├── models/                        
 │   ├── character_page.dart         # Tela de detalhes do personagem
 │   ├── detailed_character.dart     # Modelo de dados do personagem
-│   └── ...                       
+│   └── ...                        
 │
-├── pages/                        
-│   ├── home_page.dart              # Tela inicial
-│   └── ...                       
+├── pages/                         
+│   ├── home_page.dart              # Tela inicial com a lista completa dos personagens
+│   └── ...                        
 │
-├── theme/                        
-│   ├── app_theme.dart              # Fontes e fontes
-│   └── ...                       
+├── theme/                         
+│   ├── app_theme.dart              # Fontes e cores
+│   └── ...                        
 │
 ├── main.dart                       # Arquivo principal
 └── pubspec.yaml                    # Dependências do projeto
+```
 
+---
 
 ## ▶️ Como Rodar o Projeto
 
 ### 📌 Pré-requisitos
 
-- Flutter instalado na sua máquina
 - Editor de código (VS Code, Android Studio, etc.)
+- Flutter instalado na sua máquina
 
 ### 🧭 Passos
 
@@ -120,19 +122,24 @@ lib/
 
 ```bash
 git clone https://github.com/CleitonQ/kode-start.git
+```
 
 2. **Acesse o diretório do projeto:**
 
 ```bash
-cd seu_repositorio
+cd kode-start
+```
 
 3. **Instale as dependências:**
 
 ```bash
 flutter pub get
+```
 
 4. **Execute o aplicativo:**
 
 ```bash
 flutter run
+```
+
 
