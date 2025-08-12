@@ -223,7 +223,7 @@ class _CharacterPageState extends State<CharacterPage> {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              SizedBox(height: 10),  // Adiciona o espaço no final para distanciar do limite inferior
+                              SizedBox(height: 30),  // Adiciona o espaço no final para distanciar do limite inferior
                             ],
                           ),
                         ),
