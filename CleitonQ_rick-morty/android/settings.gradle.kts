@@ -7,7 +7,8 @@ pluginManagement {
         flutterSdkPath
     }
 
-    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+    // Removido o includeBuild para evitar problemas de configuração com o Flutter SDK
+    // includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
 
     repositories {
         google()
@@ -17,9 +18,11 @@ pluginManagement {
 }
 
 plugins {
-    id("dev.flutter.flutter-plugin-loader") version "1.0.0"
+    // Android Gradle Plugin (especificando a versão correta)
     id("com.android.application") version "8.7.3" apply false
-    id("org.jetbrains.kotlin.android") version "2.1.0" apply false
+
+    // Kotlin Android Plugin, compatível com o Android Gradle Plugin
+    id("org.jetbrains.kotlin.android") version "1.5.21" apply false  // Usando uma versão mais estável do Kotlin
 }
 
 include(":app")

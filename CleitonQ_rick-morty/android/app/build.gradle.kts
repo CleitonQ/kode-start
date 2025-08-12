@@ -1,14 +1,9 @@
-plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id("dev.flutter.flutter-gradle-plugin")
-}
-
 android {
     namespace = "com.example.rick_morty"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+
+    // Atualize para a versão 27.0.12077973 do NDK
+    ndkVersion "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -20,25 +15,25 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.rick_morty"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdk = 21 // Ou o valor que você escolheu
+        targetSdk = 33 // Android 13 (correspondente ao Edge 30 Pro)
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
-    buildTypes {
+    signingConfigs {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            storeFile = file("path/to/your-release-key.jks")
+            storePassword = "your-keystore-password"
+            keyAlias = "your-key-alias"
+            keyPassword = "your-key-password"
         }
     }
-}
 
-flutter {
-    source = "../.."
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.release
+        }
+    }
 }
